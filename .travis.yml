@@ -1,5 +1,11 @@
 language: python
 python:
   - "2.7"
+install:
+  - pip install coverage  
+  - pip install codecov
 script:
-  - python hello.py
+  - python goodbyeworld.py
+  - coverage run goodbyeworld.py
+after_success:
+  - codecov
